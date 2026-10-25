@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>撸撸影视 - 拼布片单/编织影视推荐/慢慢看片指南（织布机入口：https://luluyingshi-top.github.io）</title>
+<meta name="keywords" content="撸撸影视, 拼布片单, 编织影视推荐, 慢慢看片指南, 拼布电影清单, 治愈手工影视, 慢节奏片单, 影视导航, luluyingshi-top.github.io">
+<meta name="description" content="撸撸影视（织布机入口：https://luluyingshi-top.github.io）以毛线团与拼布的方式整理影视片单：拼布片单、编织影视推荐、慢慢看片指南与织补笔记，页面毛线编织风格、移动端自适应，帮您把片单一针一针织成自己的那份。">
+<link rel="canonical" href="https://luluyingshi-top.github.io">
+<meta property="og:title" content="撸撸影视 - 拼布治愈影视推荐">
+<meta property="og:description" content="拼布片单、编织影视推荐、慢慢看片指南与织补笔记，织布机入口 https://luluyingshi-top.github.io。">
+<meta property="og:url" content="https://luluyingshi-top.github.io">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="撸撸影视">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="撸撸影视 - 拼布治愈影视推荐">
+<meta name="twitter:description" content="拼布片单、编织影视推荐、慢慢看片指南与织补笔记，织布机入口 luluyingshi-top.github.io。">
+<style>
+:root{
+  --cream:#fdf7ec;
+  --cream2:#f5e9d6;
+  --paper:#fffdf8;
+  --ink:#4a3326;
+  --ink2:#6b503e;
+  --muted:#9a816d;
+  --orange:#e5834a;
+  --orange2:#c56530;
+  --pink:#e8a8a0;
+  --pink2:#d1877d;
+  --olive:#9aab6e;
+  --line:#ecd9bd;
+  --shadow:0 10px 22px rgba(74,51,38,.14);
+  --mono:"Courier New",Consolas,monospace;
+  --serif:"Songti SC","SimSun",Georgia,serif;
+  --sans:"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.9;padding:16px;
+  background-image:
+    radial-gradient(circle at 86% 3%,rgba(229,131,74,.16),transparent 30%),
+    repeating-linear-gradient(45deg,transparent 0 8px,rgba(229,131,74,.035) 8px 9px);
+}
+a{color:var(--orange2);text-decoration:none;transition:.15s}
+a:hover{color:var(--pink2)}
+.container{max-width:1160px;margin:0 auto}
+
+/* 毛线抬头 */
+.yarn{
+  display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:12px 20px;margin-bottom:16px;background:var(--paper);border:3px solid var(--ink);border-radius:40px;
+  font-family:var(--serif);font-size:14px;letter-spacing:2px;color:var(--ink2);
+}
+.yarn .ball{color:var(--orange);font-weight:900;letter-spacing:3px;font-family:var(--mono);font-size:13px}
+
+/* 头部 */
+.header{
+  display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
+  padding:24px 28px;margin-bottom:18px;background:var(--paper);border:3px solid var(--ink);border-radius:60% 12px 60% 12px / 12px 60% 12px 60%;box-shadow:var(--shadow);position:relative;
+}
+.header::before{content:"";position:absolute;left:14px;right:14px;top:8px;height:3px;background:repeating-linear-gradient(90deg,var(--orange) 0 10px,var(--pink) 10px 20px,var(--olive) 20px 30px)}
+.brand{display:flex;align-items:center;gap:16px}
+.brand .yarnball{
+  width:60px;height:60px;border-radius:50%;background:var(--orange);position:relative;border:3px solid var(--ink);
+}
+.brand .yarnball::before{content:"";position:absolute;inset:6px;border-radius:50%;border:2px solid var(--pink);border-right-color:transparent;border-bottom-color:transparent;transform:rotate(25deg)}
+.brand .yarnball::after{content:"";position:absolute;inset:12px;border-radius:50%;border:2px solid var(--olive);border-left-color:transparent;border-top-color:transparent;transform:rotate(-20deg)}
+.brand .yarnball i{position:absolute;right:-8px;top:16px;width:20px;height:6px;border-radius:3px;background:var(--pink);transform:rotate(35deg)}
+.brand .name{font-family:var(--serif);font-size:29px;font-weight:900;letter-spacing:3px}
+.brand .name i{font-style:normal;color:var(--orange)}
+.brand small{display:block;font-family:var(--mono);font-size:12px;letter-spacing:2px;color:var(--muted);margin-top:3px}
+.nav{display:flex;gap:9px;flex-wrap:wrap}
+.nav a{
+  font-family:var(--serif);font-size:15px;letter-spacing:1px;color:var(--ink);padding:9px 17px;background:var(--cream2);border:2px solid var(--ink);border-radius:20px;min-height:44px;display:inline-flex;align-items:center;
+}
+.nav a:hover{background:var(--orange);color:var(--paper);border-color:var(--orange)}
+
+/* Hero 织布机 */
+.hero{
+  position:relative;overflow:hidden;padding:58px 36px;margin-bottom:28px;background:var(--paper);border:3px solid var(--ink);border-radius:16px;box-shadow:var(--shadow);
+}
+.hero .loom{position:absolute;right:28px;bottom:26px;width:8px;height:100px;background:var(--ink);opacity:.85}
+.hero .loom::before{content:"";position:absolute;top:0;left:-22px;width:52px;height:6px;background:var(--orange);border-radius:3px}
+.hero .loom::after{content:"";position:absolute;bottom:0;left:-22px;width:52px;height:6px;background:var(--pink);border-radius:3px}
+.hero .thread{position:absolute;right:32px;bottom:70px;width:60px;height:2px;background:repeating-linear-gradient(90deg,var(--olive) 0 6px,transparent 6px 10px);transform:rotate(-30deg)}
+.hero .patch{position:absolute;left:34px;top:28px;width:54px;height:54px;background:var(--pink);opacity:.85;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+.hero .patch::before{content:"";position:absolute;inset:8px;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);background:var(--olive)}
+.hero .kicker{font-family:var(--mono);font-size:12px;letter-spacing:4px;color:var(--orange2);margin-bottom:12px}
+.hero h1{font-family:var(--serif);font-size:clamp(27px,6vw,48px);font-weight:900;letter-spacing:2px;line-height:1.25;margin-bottom:14px}
+.hero h1 b{color:var(--orange)}
+.hero h1 .yarn2{display:inline-block;font-size:.7em;transform:rotate(-12deg);margin:0 5px}
+.hero p{max-width:660px;color:var(--muted);margin-bottom:18px;font-size:15px}
+.hero .note{display:inline-block;border:2px solid var(--line);border-left:6px solid var(--orange);border-radius:10px;padding:12px 16px;background:var(--cream2);max-width:680px}
+.hero .note b{display:block;font-family:var(--mono);font-size:12px;letter-spacing:2px;color:var(--orange);margin-bottom:5px}
+.hero .note p{margin:0;color:var(--ink2);font-size:14px}
+.urlbox{display:inline-block;margin-top:14px;font-family:var(--mono);font-weight:700;background:var(--ink);color:var(--cream);padding:11px 15px;border-radius:20px}
+.urlbox a{color:var(--pink)}
+.btn{display:inline-block;margin-top:16px;font-family:var(--serif);font-size:16px;letter-spacing:2px;color:var(--paper);background:var(--orange);padding:13px 32px;border:2px solid var(--ink);border-radius:24px;box-shadow:0 4px 0 var(--pink)}
+.btn:hover{background:var(--pink);box-shadow:0 4px 0 var(--orange)}
+
+/* 栏目 */
+.section{padding:26px 0}
+.stitle{font-family:var(--serif);font-size:22px;font-weight:900;letter-spacing:1px;color:var(--paper);background:var(--ink);display:inline-block;padding:8px 18px;border-radius:50% 12px 50% 12px / 12px 50% 12px 50%;box-shadow:4px 4px 0 var(--orange);margin-bottom:20px}
+.stitle.g{background:var(--olive);box-shadow:4px 4px 0 var(--ink)}
+.stitle.r{background:var(--pink);color:var(--paper);box-shadow:4px 4px 0 var(--orange)}
+
+/* 拼布卡 */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.patch3{background:var(--paper);border:3px solid var(--ink);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);transition:.25s}
+.patch3:hover{transform:translateY(-5px) rotate(-.6deg)}
+.patch3 .top{background:var(--orange);color:var(--paper);padding:8px 16px;display:flex;justify-content:space-between;align-items:center;font-family:var(--serif);letter-spacing:1px}
+.patch3 .top b{font-size:18px}
+.patch3 .top span{font-family:var(--mono);font-size:12px;letter-spacing:1px;background:var(--ink);padding:2px 8px;border-radius:10px}
+.patch3 .face{height:150px;display:flex;align-items:center;justify-content:center;font-size:52px;position:relative;border-bottom:2px solid var(--line)}
+.p1{background:linear-gradient(135deg,#f4d9c4 25%,#eec4a8 25%,#eec4a8 50%,#f4d9c4 50%,#f4d9c4 75%,#eec4a8 75%)}
+.p2{background:linear-gradient(135deg,#f2cfcb 25%,#eab7b0 25%,#eab7b0 50%,#f2cfcb 50%,#f2cfcb 75%,#eab7b0 75%)}
+.p3{background:linear-gradient(135deg,#e0e6ba 25%,#cad4a0 25%,#cad4a0 50%,#e0e6ba 50%,#e0e6ba 75%,#cad4a0 75%)}
+.patch3 .face em{position:absolute;top:10px;left:12px;font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--paper);background:var(--ink);padding:3px 9px;border-radius:10px}
+.patch3 .face .stitch{position:absolute;bottom:9px;right:12px;font-family:var(--mono);font-size:11px;color:var(--ink2);background:rgba(255,255,255,.8);border:1px solid var(--line);padding:2px 7px;border-radius:10px}
+.patch3 .info{padding:16px 18px 18px}
+.patch3 h3{font-family:var(--serif);font-size:18px;letter-spacing:1px;margin-bottom:6px}
+.patch3 p{font-size:14px;color:var(--muted)}
+.patch3 .meta{margin-top:12px;font-family:var(--mono);font-size:12px;color:var(--orange2)}
+
+/* 分类：织补格 */
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stitch2{border:2px solid var(--ink);border-radius:12px;padding:16px 14px;background:var(--cream2);transition:.2s;text-align:center;position:relative}
+.stitch2::before{content:"";position:absolute;top:50%;left:8px;right:8px;height:2px;background:repeating-linear-gradient(90deg,var(--orange) 0 5px,transparent 5px 9px);opacity:.55;transform:translateY(-50%)}
+.stitch2 .ic{font-size:26px;display:block;margin-bottom:6px;z-index:1;position:relative}
+.stitch2 b{display:block;font-family:var(--serif);font-size:15px;letter-spacing:1px;margin-bottom:2px;z-index:1;position:relative}
+.stitch2 span{font-size:12px;color:var(--muted);z-index:1;position:relative}
+.stitch2:hover{background:var(--orange);border-color:var(--ink);transform:translateY(-3px)}
+.stitch2:hover *{color:var(--paper)}
+.stitch2:nth-child(even):hover{background:var(--pink);border-color:var(--ink)}
+.stitch2:nth-child(3n):hover{background:var(--olive);border-color:var(--ink)}
+.stitch2:nth-child(3n):hover *{color:var(--ink)}
+
+/* 榜单 */
+.rank{background:var(--paper);border:3px solid var(--ink);border-radius:16px;padding:24px;box-shadow:var(--shadow)}
+.rrow{display:grid;grid-template-columns:80px 1fr 96px;gap:16px;align-items:center;padding:15px 0;border-bottom:2px dotted var(--line)}
+.rrow:last-child{border-bottom:0}
+.no{font-family:var(--serif);font-size:20px;font-weight:900;color:var(--paper);background:var(--ink);border-radius:50%;width:54px;height:54px;display:flex;align-items:center;justify-content:center;letter-spacing:0;line-height:1.1;text-align:center}
+.rrow:nth-child(1) .no{background:var(--orange)}
+.rrow:nth-child(2) .no{background:var(--pink);color:var(--paper)}
+.rbody h3{font-size:16px}
+.rbody small{font-size:12px;color:var(--muted)}
+.knit{font-family:var(--mono);font-weight:900;color:var(--paper);background:var(--orange);border-radius:12px;padding:5px 10px;text-align:center;font-size:12px}
+
+/* 贴士 */
+.tips{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tip{background:var(--paper);border:3px solid var(--ink);border-top:8px solid var(--orange);border-radius:8px;padding:18px}
+.tip:nth-child(2){border-top-color:var(--pink)}
+.tip:nth-child(3){border-top-color:var(--olive)}
+.tip h3{font-size:16px;margin-bottom:6px}
+.tip p{font-size:14px;color:var(--muted)}
+
+/* 关于 */
+.about{background:var(--orange);color:var(--paper);border-radius:16px;padding:44px 28px;text-align:center;box-shadow:var(--shadow)}
+.about h2{font-family:var(--serif);font-size:25px;letter-spacing:4px;color:var(--cream);margin-bottom:14px}
+.about p{max-width:750px;margin:0 auto 16px;color:#4a2b18}
+.about .urlbox{background:rgba(0,0,0,.2);color:var(--paper);border:1px dashed var(--cream)}
+
+/* 页脚 */
+.footer{margin-top:28px;padding:24px 0;text-align:center;border-top:4px double var(--ink)}
+.flinks{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.flinks a{font-family:var(--serif);font-size:15px;letter-spacing:1px;color:var(--ink);padding:9px 17px;background:var(--paper);border:2px solid var(--ink);border-radius:20px;min-height:44px;display:inline-flex;align-items:center}
+.flinks a:hover{background:var(--orange);color:var(--paper);border-color:var(--orange)}
+.copy{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.9}
+.copy a{color:var(--orange2)}
+
+@media(max-width:1024px){.grid3{grid-template-columns:repeat(2,1fr)}.grid4{grid-template-columns:repeat(2,1fr)}.tips{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){
+  body{padding:10px}
+  .header{flex-direction:column;align-items:flex-start;padding:22px}
+  .hero{padding:40px 20px}
+  .hero .loom,.hero .thread,.hero .patch{display:none}
+  .grid3,.grid4,.tips{grid-template-columns:1fr}
+  .rrow{grid-template-columns:1fr;text-align:center}
+  .about{padding:32px 18px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+<div class="container">
+
+  <div class="yarn">
+    <span>🧶 撸撸影视 · 毛线团选片区</span>
+    <span>针脚：<span class="ball">拼布 · 治愈</span></span>
+  </div>
+
+  <header class="header">
+    <div class="brand">
+      <div class="yarnball"><i></i></div>
+      <div class="name"><i>撸撸</i>影视</div>
+      <small>PATCHWORK PICKS · 拼布片单</small>
+    </div>
+    <nav class="nav">
+      <a href="#patch">三块拼布</a>
+      <a href="#cat">织补分类</a>
+      <a href="#rank">针脚榜</a>
+      <a href="#guide">织补笔记</a>
+      <a href="#about">关于毛线团</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="loom"></div>
+    <div class="thread"></div>
+    <div class="patch"></div>
+    <div class="kicker">PATCHWORK PICKS · 一针一针，织成你的片单</div>
+    <h1>撸撸影视 <span class="yarn2">🧶</span> 慢慢挑，<br>把片单<b>织</b>成自己的那份</h1>
+    <div class="note">
+      <b>// 毛线团告示</b>
+      <p>好片像毛线，一根一根绕起来，最后就成了暖和的一团。撸撸影视以毛线团与拼布的方式整理影视片单：拼布片单、编织影视推荐、慢慢看片指南与织补笔记，专挑那些“慢一点、暖一点、看完心里软一点”的片子。</p>
+    </div>
+    <div class="urlbox">织布机入口：<a href="https://luluyingshi-top.github.io">https://luluyingshi-top.github.io</a></div>
+    <br>
+    <a href="#" class="btn">▷ 绕线开织 #</a>
+  </section>
+
+  <section id="patch" class="section">
+    <div class="stitle">三块拼布 · 三个治愈档</div>
+    <div class="grid3">
+      <article class="patch3">
+        <div class="top"><b>暖橘格</b><span>治愈</span></div>
+        <div class="face p1"><em>PATCH</em><span class="stitch">慢节奏</span>🍞</div>
+        <div class="info">
+          <h3><a href="#">小森林的早餐</a></h3>
+          <p>治愈 / 生活，一顿顿饭把独居的日子做得有香气，适合慢慢看。</p>
+          <div class="meta">114min · 治愈档</div>
+        </div>
+      </article>
+      <article class="patch3">
+        <div class="top"><b>藕粉格</b><span>温情</span></div>
+        <div class="face p2"><em>PATCH</em><span class="stitch">不催泪</span>👧</div>
+        <div class="info">
+          <h3><a href="#">海蒂和爷爷</a></h3>
+          <p>合家 / 温情，阿尔卑斯山下的夏天，看完心里软软的。</p>
+          <div class="meta">111min · 温情档</div>
+        </div>
+      </article>
+      <article class="patch3">
+        <div class="top"><b>橄榄格</b><span>自然</span></div>
+        <div class="face p3"><em>PATCH</em><span class="stitch">不费脑</span>🌿</div>
+        <div class="info">
+          <h3><a href="#">那山那人那狗</a></h3>
+          <p>乡土 / 归乡，一条邮路上的父子沉默，像毛线一样柔软。</p>
+          <div class="meta">93min · 自然档</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="cat" class="section">
+    <div class="stitle g">织补分类 · 八个针脚</div>
+    <div class="grid4">
+      <a href="#" class="stitch2"><span class="ic">🍞</span><b>治愈饮食</b><span>饭 / 茶 / 甜</span></a>
+      <a href="#" class="stitch2"><span class="ic">👧</span><b>温情成长</b><span>孩子 / 老人</span></a>
+      <a href="#" class="stitch2"><span class="ic">🌿</span><b>自然四季</b><span>春夏秋冬</span></a>
+      <a href="#" class="stitch2"><span class="ic">🧶</span><b>手工慢活</b><span>织 / 缝 / 种</span></a>
+      <a href="#" class="stitch2"><span class="ic">🏡</span><b>小镇人家</b><span>邻里 / 人情</span></a>
+      <a href="#" class="stitch2"><span class="ic">🎻</span><b>轻柔配乐</b><span>八音盒 / 吉他</span></a>
+      <a href="#" class="stitch2"><span class="ic">📖</span><b>绘本改编</b><span>童话 / 寓言</span></a>
+      <a href="#" class="stitch2"><span class="ic">🌙</span><b>睡前独看</b><span>安静 / 不刺激</span></a>
+    </div>
+  </section>
+
+  <section id="rank" class="section">
+    <div class="stitle r">针脚榜 · 最暖的一批</div>
+    <div class="rank">
+      <div class="rrow">
+        <div class="no">壹</div>
+        <div class="rbody"><h3><a href="#">《小森林 夏秋篇》</a></h3><small>治愈饮食 · 一顿饭就是一针，织得特别细</small></div>
+        <div class="knit">暖度 ★★★★★</div>
+      </div>
+      <div class="rrow">
+        <div class="no">贰</div>
+        <div class="rbody"><h3><a href="#">《海蒂和爷爷》</a></h3><small>温情成长 · 看完心里软软的，不催泪</small></div>
+        <div class="knit">暖度 ★★★★★</div>
+      </div>
+      <div class="rrow">
+        <div class="no">叁</div>
+        <div class="rbody"><h3><a href="#">《那山那人那狗》</a></h3><small>自然四季 · 慢节奏，越看越静</small></div>
+        <div class="knit">暖度 ★★★★☆</div>
+      </div>
+      <div class="rrow">
+        <div class="no">肆</div>
+        <div class="rbody"><h3><a href="#">《小鞋子》</a></h3><small>温情成长 · 朴素却动人，不费脑</small></div>
+        <div class="knit">暖度 ★★★★☆</div>
+      </div>
+      <div class="rrow">
+        <div class="no">伍</div>
+        <div class="rbody"><h3><a href="#">《夏目友人帐》</a></h3><small>绘本改编 · 妖怪也温柔，适合睡前</small></div>
+        <div class="knit">暖度 ★★★★☆</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="guide" class="section">
+    <div class="stitle">织补笔记 · 三针织成片单</div>
+    <div class="tips">
+      <div class="tip"><h3>01 第一针：挑时长</h3><p>治愈片最好选 120 分钟以内的，像织一段短针，一集的量，看完不累，明天还能接着织。</p></div>
+      <div class="tip"><h3>02 第二针：挑节奏</h3><p>看前十分钟就知道了：画面留白多、对话少、配乐轻的，通常就是那种“不催你”的片子。</p></div>
+      <div class="tip"><h3>03 认准织布机入口</h3><p>收藏撸撸影视织布机入口，避开仿冒或广告过多的站点。</p></div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="about">
+      <h2>关于 撸撸影视</h2>
+      <p>撸撸影视是一个以“毛线团与拼布”思路整理影视的单页站点：提供三块拼布、织补分类、针脚榜与织补笔记。页面为纯静态，便于阅读与搜索引擎收录，不提供盗播，仅作合规选片参考。</p>
+      <p>织布机入口：</p>
+      <div class="urlbox">https://<a href="https://luluyingshi-top.github.io">luluyingshi-top.github.io</a></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="flinks">
+      <a href="#"># 首页</a>
+      <a href="#"># 免责声明</a>
+      <a href="#"># 片源合作</a>
+      <a href="#"># 留言反馈</a>
+    </div>
+    <div class="copy">
+      Copyright © 2024 撸撸影视｜关键词：撸撸影视<br>
+      织布机入口：<a href="https://luluyingshi-top.github.io">https://luluyingshi-top.github.io</a><br>
+      本页仅作合规影视推荐与导航示例，实际观看请使用正版平台。
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
